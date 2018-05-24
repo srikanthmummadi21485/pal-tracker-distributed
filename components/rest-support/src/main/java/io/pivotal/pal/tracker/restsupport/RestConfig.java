@@ -12,16 +12,10 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class RestConfig {
 
-    @LoadBalanced
-    @Bean
-    public RestOperations restOperations() {
-        return new RestTemplate();
-    }
-
-    @Bean
-    public ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        return mapper;
-    }
+        @Bean
+        public ObjectMapper objectMapper() {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            return mapper;
+        }
 }
